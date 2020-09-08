@@ -1,0 +1,65 @@
+.hero ,.hero img
+{
+   height: 100vh;
+   width: 100vw;
+   position: relative;
+}
+.login
+{
+    width:300px;
+    left: 35%;
+    top: 15%;
+    position:absolute;
+    padding:40px;
+
+}
+.hero .login h1{
+    text-align: center;
+    color: gainsboro;
+    height: auto;
+    width: auto;
+}
+.hero .login input[type="text"],.hero .login input[type="password"] 
+{
+  border:0;
+  background: none;
+  display: block;
+  margin: 5px auto;
+  text-align: center;
+  border: 2px solid #3498db;
+  padding: 14px 10px;
+  width: 200px;
+  outline: none;
+  color: white;
+  border-radius: 24px;
+  transition: 0.25s;
+}
+.hero .login .sub
+{
+    border:0;
+  background: none;
+  display: block;
+  margin: 5px auto;
+  text-align: center;
+  border: 2px solid #2ecc71;
+  padding: 14px 40px;
+  outline: none;
+  color: white;
+  border-radius: 24px;
+  transition: 0.25s;
+  cursor: pointer;
+}
+.hero .login input[type="text"]:focus,.hero .login input[type="password"]:focus
+{
+    width:250px;
+    border-color: lime;
+}
+.hero .login input[type="submit"]:hover
+{
+    background-color: green;
+}
+::placeholder
+{
+    color: lavenderblush;
+    opacity: 2;
+}
