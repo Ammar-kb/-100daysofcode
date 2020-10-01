@@ -1,0 +1,113 @@
+$BG: #262626;
+$CIRCLE_NUM: 30;
+
+html {
+  width: 100%;
+  height: 100%;
+}
+
+body {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  font-family: "Cute Font", Roboto, sans-serif;
+  background-color: $BG;
+}
+
+* {
+  &:before,
+  &:after {
+    position: absolute;
+    content: "";
+  }
+}
+
+.container {
+  position: relative;
+  width: 300px;
+  height: 500px;
+  margin: auto;
+  transform: scale3d(1.2, 0.8, 1.0);
+}
+
+.circle {
+  position: absolute;
+  border-radius: 50%;
+
+  @for $circle from 1 through $CIRCLE_NUM {
+    &:nth-child(#{$circle}) {
+      width: 200px;
+      height: 200px;
+      transform: skew(0, -10deg);
+
+      top: #{$circle * 15}px;
+      left: #{$circle * 3.22}px;
+
+      @if $circle % 3 == 0 {
+        animation: rotate-reverse #{$circle + random(10)}s linear infinite;
+      }
+      @else {
+        animation: rotate #{$circle + random(10)}s linear infinite;
+      }
+
+      .content {
+        position: absolute;
+        width: random(150) + px;
+        height: random(50) + px;
+        top: 40%;
+        left: 40%;
+
+        @for $content from 1 through 25 {
+          &:nth-child(#{$content}) {
+            opacity: 0.5;
+            clip-path: polygon(#{random(100)}% 0, #{random(100)}% 0, #{random(100)}% 48%);
+
+            &:before, &:after {
+              width: random(100) + px;
+              height: random(50) + px;
+              clip-path: polygon(#{random(100)}% 0, #{random(100)}% 0, #{random(100)}% 48%);
+            }
+
+            &:before {
+              background: #fff;
+            }
+
+            &:after {
+              top: 10px;
+              left: 30px;
+              background: hsl(276, random(100), 50);
+            }
+
+            @if $circle <= $CIRCLE_NUM / 2 {
+              background: hsl(245, random(100), 50);
+              transform: rotate($content * 14.4deg) translate(0, #{($circle + 5 )* 10}px);
+            }
+            @else {
+              background: hsl(180, random(100), 50);
+              transform: rotate($content * 14.4deg) translate(0, #{($CIRCLE_NUM - $circle + 5) * 10}px);
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+@keyframes rotate {
+  0% {
+    transform: skew(0, -10deg) rotate(0);
+  }
+  100% {
+    transform: skew(0, -10deg) rotate(360deg);
+  }
+}
+
+@keyframes rotate-reverse {
+  0% {
+    transform: skew(0, -10deg) rotate(360deg);
+  }
+  100% {
+    transform: skew(0, -10deg) rotate(0);
+  }
+}
