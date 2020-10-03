@@ -5,7 +5,7 @@ int main()
 int a=10,b=5;
 cout<<"before"<<a<<" "<<b;
 a = a+b;
-b = b-a;
+b = a-b;
 a = a-b;
 cout<<"after"<<a<<" "<<b;
 }
