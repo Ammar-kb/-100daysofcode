@@ -24,7 +24,7 @@ int main()
             low++;
             mid++;
             break;
-            
+               
             case 1:
             mid++;
             break;
