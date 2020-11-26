@@ -7,7 +7,7 @@ int main()
     cin>>n>>m;
     do
     {
-        n=n*3;
+        n=n*3;   
         m=m*2;
         count++;
     }while(n<=m);
