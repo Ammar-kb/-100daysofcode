@@ -1,6 +1,6 @@
 #include<iostream>
 #include<stack>
-#include<string>
+#include<string>  
 using namespace std;
 
 bool balparanthesis(string str)
