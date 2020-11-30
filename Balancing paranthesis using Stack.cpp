@@ -2,7 +2,7 @@
 #include<stack>
 #include<string>  
 using namespace std;
-
+  
 bool balparanthesis(string str)
 {
 stack <char> stack;
