@@ -5,7 +5,7 @@ int main()
 {   
     int n,m,count=0;
     cin>>n>>m;
-    do
+    do  
     {
         n=n*3;   
         m=m*2;
